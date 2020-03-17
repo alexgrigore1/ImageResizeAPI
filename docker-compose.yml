@@ -1,0 +1,28 @@
+version: '3'
+services:
+  image-resizer:
+    build: .
+    command: yarn dev
+    environment: 
+      PORT: 4000
+    volumes:
+      - ./src:/usr/app/src
+      - ./dist:/usr/app/dist
+      - ./seed:/usr/app/seed
+      - ./cache/images:/usr/app/cache/images
+    ports:
+      - "4000:4000"
+    depends_on:
+      - redis
+      - mongo
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: mypass
+    ports:
+      - "27017:27017"
+  redis:
+    image: redis
+    ports:
+      - "6379:6379"

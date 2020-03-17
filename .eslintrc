@@ -1,0 +1,20 @@
+{
+  "parser":  "@typescript-eslint/parser",  // Specifies the ESLint parser
+  "extends":  [
+    "plugin:@typescript-eslint/recommended"  // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+  ],
+ "parserOptions":  {
+    "ecmaVersion":  2018,  // Allows for the parsing of modern ECMAScript features
+    "sourceType":  "module"  // Allows for the use of imports
+  },
+  "rules":  {
+    "object-curly-spacing": "error",
+    "space-before-blocks": "error",
+    "space-before-function-paren":"error",
+    "spaced-comment":"error",
+    "no-mixed-spaces-and-tabs": "error",
+    "no-trailing-spaces":"error",
+    "semi": "error",
+    "complexity": ["error", 7]
+  }
+}

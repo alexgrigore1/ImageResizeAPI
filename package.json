@@ -1,0 +1,46 @@
+{
+  "name": "imageresizeapi",
+  "version": "1.0.0",
+  "description": "Image Resize API",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "nodemon dist/index.js",
+    "build:dev": "tsc --watch --preserveWatchOutput",
+    "dev": "concurrently \"npm:build:dev\" \"npm:start:dev\"",
+    "lint-autofix": "eslint --ext .ts ./ --fix",
+    "test:load": "node dist/test/load.js",
+    "test:unit": "tsc && jest",
+    "clear-cache": "sudo rm -rf cache/images/*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:alexgrigorehww/ImageResizeAPI.git"
+  },
+  "author": "Alex Grigore",
+  "license": "ISC",
+  "homepage": "https://github.com/alexgrigorehww/ImageResizeAPI#image-resize-api",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.5.5",
+    "recursive-readdir-async": "^1.1.6",
+    "rsmq": "^0.12.0",
+    "rsmq-worker": "^0.5.2",
+    "sharp": "^0.25.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.3",
+    "@types/jest": "^25.1.4",
+    "@types/mongodb": "^3.5.2",
+    "@types/rsmq": "^0.8.4",
+    "@types/rsmq-worker": "^0.3.29",
+    "@types/sharp": "^0.24.0",
+    "@typescript-eslint/eslint-plugin": "^2.23.0",
+    "@typescript-eslint/parser": "^2.23.0",
+    "concurrently": "^5.1.0",
+    "eslint": "^6.8.0",
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.8.3"
+  }
+}
