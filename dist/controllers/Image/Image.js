@@ -68,6 +68,7 @@ var ImageController = /** @class */ (function (_super) {
     ImageController.extractResizeParams = function (req) {
         var imagePath = req.params.imagePath;
         var size = req.query.size;
+        var additionalImagePath = req.params[0];
         var resizeParams = null;
         if (size) {
             var dimensions = size.split("x");
@@ -75,7 +76,7 @@ var ImageController = /** @class */ (function (_super) {
             var height = +dimensions[1];
             resizeParams = new ImageResizeParams_1.ImageResizeParams(width, height); // errors handled good enough by constructor for now
         }
-        return { imagePath: imagePath, resizeParams: resizeParams };
+        return { imagePath: imagePath + additionalImagePath, resizeParams: resizeParams };
     };
     ImageController.prototype.resizeImage = function (req, res) {
         return __awaiter(this, void 0, void 0, function () {

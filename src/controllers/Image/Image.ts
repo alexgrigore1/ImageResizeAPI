@@ -22,6 +22,7 @@ export class ImageController extends Controller {
     private static extractResizeParams (req: Request): {imagePath: string; resizeParams: ImageResizeParams|null} {
         const {imagePath} = req.params;
         const {size} = req.query;
+        const additionalImagePath = req.params[0];
         let resizeParams: ImageResizeParams|null = null;
         if(size) {
             const dimensions = size.split("x");
@@ -30,7 +31,7 @@ export class ImageController extends Controller {
             resizeParams = new ImageResizeParams(width, height); // errors handled good enough by constructor for now
         }
 
-        return {imagePath, resizeParams};
+        return {imagePath: imagePath + additionalImagePath, resizeParams};
     }
 
     public async resizeImage (req: Request, res: Response): Promise<void> {
