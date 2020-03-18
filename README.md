@@ -55,6 +55,6 @@ Because resizing is the most important action and we really expect the server to
 Anyway, we still care about caching so we are queueing theese actions using RSMQ. In this way, the messages are processed one by one, so there will be only one write action at at a time and will be left some resources for the other requests.
 
 ## Known limitations
-1. Cache is never expiring or invalidating
-2. The system is not scalling on demand
-3. Reading/writing files from/to the disk are on the same machine with the server itself (RSMQ helps a lot but the I/O )
+1. Cache is never expiring or invalidating.
+2. The system is not scalling on demand.
+3. Reading/writing files from/to the disk are on the same machine with the server itself so it may affect the request handling speed.
