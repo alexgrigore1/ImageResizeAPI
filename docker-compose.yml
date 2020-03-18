@@ -7,7 +7,6 @@ services:
       PORT: 4000
     volumes:
       - ./src:/usr/app/src
-      - ./dist:/usr/app/dist
       - ./seed:/usr/app/seed
       - ./cache/images:/usr/app/cache/images
     ports:

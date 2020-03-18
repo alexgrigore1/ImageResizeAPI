@@ -4,3 +4,4 @@ COPY package.json .
 RUN apk add python make gcc g++ \
     && npm install --quiet
 COPY . .
+RUN npm run build
