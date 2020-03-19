@@ -1,5 +1,5 @@
 export const PORT = process.env.PORT || 4000;
-export const ROOT = process.env.PWD || "/home/alex/projects/hoxton/image-resizer";
+export const ROOT = process.env.PWD;
 export const MONGO_CONFIG = {
     user: 'root',
     password: 'mypass',
