@@ -24,7 +24,7 @@
   "homepage": "https://github.com/alexgrigorehww/ImageResizeAPI#image-resize-api",
   "keywords": [],
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mongodb": "^3.5.5",
     "recursive-readdir-async": "^1.1.6",
     "rsmq": "^0.12.0",
